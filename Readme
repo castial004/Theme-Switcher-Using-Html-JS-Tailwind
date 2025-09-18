@@ -1,0 +1,46 @@
+🌗 Dark Mode Setup with TailwindCSS
+
+This project demonstrates how to implement dark mode in two different ways using TailwindCSS:
+
+1️⃣ Apply Theme Based on Operating System
+
+If you want the theme to follow the user’s OS preference (system light/dark setting), simply add the dark class in your Tailwind config or HTML.
+Tailwind will automatically respect the system preference.
+
+<html class="dark">
+  <!-- Your content -->
+</html>
+
+2️⃣ Allow Users to Choose the Theme
+
+If you want to give users control over the theme (manual toggle), follow these steps:
+
+🔹 Step 1: Overwrite the Default dark Variant
+
+In your input.css, add the following line to allow dark mode to apply via a dark class on the <html> element:
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+🔹 Step 2: Toggle Dark/Light Mode with JavaScript
+
+Use JavaScript to dynamically add or remove the dark class from the <html> element.
+
+Example:
+
+const html = document.documentElement;
+
+// Enable Dark Mode
+html.classList.add("dark");
+
+// Enable Light Mode
+html.classList.remove("dark");
+
+// Toggle Mode
+html.classList.toggle("dark");
+
+
+✅ Now you can either:
+
+Let the theme follow the operating system’s setting, or
+
+Allow the user to switch manually between light and dark modes.
